@@ -551,12 +551,12 @@ def call_gemini(prompt: str):
 
     genai.configure(api_key=settings.GEMINI_API_KEY)
 
+    # Only use free-tier available models
     models = [
         "gemini-1.5-flash",
         "gemini-1.5-flash-latest",
         "gemini-1.5-pro",
         "gemini-pro",
-        "gemini-2.0-flash",
     ]
 
     last_err = None
