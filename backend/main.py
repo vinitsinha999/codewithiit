@@ -67,6 +67,8 @@ origins = [
     "http://localhost:5174",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:5174",
+    "https://codewithiit.vercel.app",
+    "https://codewithiit-git-main-vinitsinha999s-projects.vercel.app",
 ]
 
 if settings.FRONTEND_URL and settings.FRONTEND_URL not in origins:
@@ -108,7 +110,7 @@ app.include_router(progress_router.router)
 app.include_router(ai.router)
 app.include_router(leaderboard.router)
 app.include_router(streak.router)
-app.include_router(certificates.router)   # ✅ Certificate tracking
+app.include_router(certificates.router)
 
 
 # ─────────────────────────────────────────
