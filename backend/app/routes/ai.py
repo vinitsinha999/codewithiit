@@ -981,13 +981,15 @@ Reply in plain text only, no markdown."""
 
     try:
         hint = call_groq(prompt)
-    except Exception:
+    except Exception as groq_err:
+        print(f"[hint] Groq failed: {groq_err}")
         try:
             hint = call_gemini(prompt)
         except Exception as e:
+            print(f"[hint] Gemini failed: {e}")
             raise HTTPException(
                 status_code=502,
-                detail=f"AI hint unavailable right now. Try again shortly."
+                detail="AI hint unavailable right now. Try again shortly."
             )
 
     return {"hint": hint.strip()}
