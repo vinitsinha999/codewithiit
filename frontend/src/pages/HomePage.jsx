@@ -75,14 +75,14 @@ const FEATURES = [
   {
     icon: Shield,
     title: 'Built by IIT Patna Student',
-    desc: 'Designed to the rigorous standards of IIT Patna — structured, comprehensive, and battle-tested curriculum.',
+    desc: 'Designed to the rigorous standards of IIT  — structured, comprehensive, and battle-tested curriculum.',
     gradient: 'from-blue-500 to-cyan-500',
     glow: 'rgba(59,130,246,0.3)',
   },
   {
     icon: Crown,
     title: 'Completion Certificate',
-    desc: 'Finish all 12 chapters and earn a beautiful downloadable certificate with IIT Patna branding.',
+    desc: 'Finish all 12 chapters and earn a beautiful downloadable certificate with Code with IIT  branding.',
     gradient: 'from-pink-500 to-rose-500',
     glow: 'rgba(236,72,153,0.3)',
   },
@@ -143,7 +143,7 @@ export default function HomePage() {
           <motion.div initial={{ opacity:0, y:-20 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.1 }}
             className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full text-xs font-semibold tracking-[0.2em] uppercase"
             style={{ background:'rgba(200,146,42,0.1)', border:'1px solid rgba(200,146,42,0.35)', color:'#f5c842' }}>
-            <Star className="w-3 h-3 fill-current" /> IIT Patna · Python Learning Platform
+            <Star className="w-3 h-3 fill-current" />   Python Learning Platform
           </motion.div>
 
           {/* Main title */}
