@@ -26,7 +26,6 @@ export function RegisterPage() {
   }
 
   const handleSubmit = async () => {
-    // Basic client-side validation
     const newErrors = {}
     if (!form.username) newErrors.username = 'Username required'
     if (!form.email)    newErrors.email    = 'Email required'
@@ -52,7 +51,6 @@ export function RegisterPage() {
       if (typeof detail === 'string') {
         toast.error(detail)
       } else if (Array.isArray(detail)) {
-        // Pydantic validation errors
         detail.forEach((e) => toast.error(e.msg))
       } else {
         toast.error('Registration failed. Try again.')
@@ -70,14 +68,12 @@ export function RegisterPage() {
         className="w-full max-w-md"
       >
         <div className="card p-8">
-          {/* Header */}
           <div className="text-center mb-8">
             <div className="text-5xl mb-3">⚔️</div>
             <h1 className="text-2xl font-bold text-white">Begin Your Quest</h1>
             <p className="text-gray-400 mt-2">Create your wizard account</p>
           </div>
 
-          {/* Form */}
           <div className="space-y-4">
             <div>
               <label className="block text-sm text-gray-400 mb-1">Username</label>
@@ -87,6 +83,10 @@ export function RegisterPage() {
                 value={form.username}
                 onChange={handleChange}
                 placeholder="Your wizard name"
+                autoCapitalize="none"
+                autoCorrect="off"
+                autoComplete="username"
+                spellCheck="false"
                 className={`w-full bg-gray-800 border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-magic-light transition-colors ${
                   errors.username ? 'border-red-500' : 'border-gray-700'
                 }`}
@@ -102,6 +102,9 @@ export function RegisterPage() {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="your@email.com"
+                autoCapitalize="none"
+                autoCorrect="off"
+                autoComplete="email"
                 className={`w-full bg-gray-800 border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-magic-light transition-colors ${
                   errors.email ? 'border-red-500' : 'border-gray-700'
                 }`}
@@ -117,6 +120,7 @@ export function RegisterPage() {
                 value={form.password}
                 onChange={handleChange}
                 placeholder="Min 8 characters"
+                autoComplete="new-password"
                 className={`w-full bg-gray-800 border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-magic-light transition-colors ${
                   errors.password ? 'border-red-500' : 'border-gray-700'
                 }`}
@@ -220,6 +224,9 @@ export function LoginPage() {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="your@email.com"
+                autoCapitalize="none"
+                autoCorrect="off"
+                autoComplete="email"
                 className={`w-full bg-gray-800 border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-magic-light transition-colors ${
                   errors.email ? 'border-red-500' : 'border-gray-700'
                 }`}
@@ -235,6 +242,7 @@ export function LoginPage() {
                 value={form.password}
                 onChange={handleChange}
                 placeholder="Your password"
+                autoComplete="current-password"
                 className={`w-full bg-gray-800 border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-magic-light transition-colors ${
                   errors.password ? 'border-red-500' : 'border-gray-700'
                 }`}

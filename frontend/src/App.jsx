@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import Navbar from '@/components/layout/Navbar'
 import HomePage from '@/pages/HomePage'
@@ -7,6 +7,13 @@ import ChapterPage from '@/pages/ChapterPage'
 import DashboardPage from '@/pages/DashboardPage'
 import LeaderboardPage from '@/pages/LeaderboardPage'
 import { LoginPage, RegisterPage } from '@/pages/AuthPages'
+import { useAuth } from '@/context/AuthContext'
+
+function GuestRoute({ children }) {
+  const { user, isLoading } = useAuth()
+  if (isLoading) return null
+  return user ? <Navigate to="/learn" replace /> : children
+}
 
 export default function App() {
   return (
@@ -18,8 +25,8 @@ export default function App() {
         <Route path="/chapter/:slug" element={<ChapterPage />}     />
         <Route path="/dashboard"     element={<DashboardPage />}   />
         <Route path="/leaderboard"   element={<LeaderboardPage />} />
-        <Route path="/login"         element={<LoginPage />}       />
-        <Route path="/register"      element={<RegisterPage />}    />
+        <Route path="/login"         element={<GuestRoute><LoginPage /></GuestRoute>}    />
+        <Route path="/register"      element={<GuestRoute><RegisterPage /></GuestRoute>} />
         <Route path="*"              element={<HomePage />}        />
       </Routes>
       <Toaster
