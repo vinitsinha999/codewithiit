@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink text-parchment font-cinzel;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-panel;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-magic rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-magic-light;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-magic to-gold text-white font-cinzel text-sm
+           tracking-widest uppercase px-6 py-3 rounded-xl cursor-pointer
+           transition-all duration-200 border-none
+           hover:-translate-y-0.5 hover:shadow-lg hover:shadow-magic/40
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-gold/40 text-gold font-cinzel text-sm
+           tracking-widest uppercase px-6 py-3 rounded-xl cursor-pointer
+           transition-all duration-200
+           hover:bg-gold/10 hover:border-gold;
+  }
+
+  .card {
+    @apply bg-gradient-to-br from-panel to-panel-2 border border-gold/20
+           rounded-2xl shadow-2xl;
+  }
+
+  .code-block {
+    @apply bg-black/40 border border-white/10 rounded-lg p-4
+           font-code text-sm leading-relaxed;
+  }
+
+  .lesson-box {
+    @apply bg-sage/10 border-l-4 border-sage-light rounded-r-lg p-4;
+  }
+
+  .tip-box {
+    @apply bg-blue-900/20 border-l-4 border-blue-400 rounded-r-lg p-3
+           text-blue-200 text-sm font-cinzel;
+  }
+
+  .choice-btn {
+    @apply bg-white/5 border-2 border-white/10 rounded-xl p-3
+           text-left text-parchment font-code text-sm cursor-pointer
+           transition-all duration-200 flex items-start gap-3
+           hover:bg-gold/10 hover:border-gold/40 hover:translate-x-1
+           disabled:cursor-default disabled:hover:translate-x-0;
+  }
+
+  .choice-btn.correct {
+    @apply bg-sage/20 border-sage-light text-green-200;
+  }
+
+  .choice-btn.wrong {
+    @apply bg-red-900/20 border-red-500/50 text-parchment/50 line-through;
+  }
+
+  .feedback-success {
+    @apply bg-sage/20 border border-sage-light/40 text-green-200 rounded-xl p-4;
+  }
+
+  .feedback-fail {
+    @apply bg-red-900/20 border border-red-500/40 text-red-200 rounded-xl p-4;
+  }
+
+  .concept-tag {
+    @apply bg-gold/15 border border-gold/30 text-gold-light rounded-full
+           px-3 py-0.5 text-xs tracking-widest uppercase;
+  }
+
+  .chapter-badge {
+    @apply inline-flex items-center gap-2 bg-magic/20 border border-magic-light/30
+           rounded-full px-3 py-1 text-xs tracking-widest uppercase text-magic-light;
+  }
+
+  /* Starfield */
+  .star {
+    @apply absolute bg-white rounded-full;
+    animation: twinkle var(--duration, 3s) ease-in-out infinite var(--delay, 0s);
+  }
+}
+
+@layer utilities {
+  .text-shadow-gold {
+    text-shadow: 0 0 30px rgba(200,146,42,0.6), 0 2px 0 rgba(0,0,0,0.8);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(176,140,240,0.8);
+  }
+
+  .bg-stars {
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(123,79,207,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(200,146,42,0.10) 0%, transparent 50%);
+  }
+}
