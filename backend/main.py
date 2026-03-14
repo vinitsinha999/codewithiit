@@ -59,7 +59,7 @@ app = FastAPI(
 
 
 # ─────────────────────────────────────────
-# CORS
+# CORS CONFIG (FIXED)
 # ─────────────────────────────────────────
 
 origins = [
@@ -67,18 +67,32 @@ origins = [
     "http://localhost:5174",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:5174",
+
+    # production frontend
     "https://codewithiit.vercel.app",
     "https://codewithiit-git-main-vinitsinha999s-projects.vercel.app",
 ]
 
+# allow env frontend if defined
 if settings.FRONTEND_URL and settings.FRONTEND_URL not in origins:
     origins.append(settings.FRONTEND_URL)
+
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
+
+    # important for vercel
     allow_credentials=True,
-    allow_methods=["*"],
+
+    allow_methods=[
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE",
+        "OPTIONS"
+    ],
+
     allow_headers=["*"],
 )
 
