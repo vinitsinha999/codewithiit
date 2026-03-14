@@ -1,3 +1,4 @@
+from groq import Groq
 from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks
 from pydantic import BaseModel
 from typing import List
@@ -507,7 +508,7 @@ Return ONLY raw JSON — no markdown, no explanation, no extra text before or af
 
 def call_groq(prompt: str):
     """Try multiple Groq models — if one hits rate limit, try next."""
-    from groq import Groq
+    
 
     client = Groq(api_key=settings.GROQ_API_KEY)
 
