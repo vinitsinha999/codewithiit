@@ -42,7 +42,6 @@ export function RegisterPage() {
     try {
       const res = await authAPI.register(form)
       const { access_token, user } = res.data
-
       login(access_token, user)
       toast.success(`Welcome to the quest, ${user.username}! ✦`)
       navigate('/learn')
@@ -59,6 +58,11 @@ export function RegisterPage() {
       setLoading(false)
     }
   }
+
+  const inputClass = (hasError) =>
+    `w-full bg-gray-800 border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-magic-light transition-colors normal-case font-sans tracking-normal ${
+      hasError ? 'border-red-500' : 'border-gray-700'
+    }`
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-20">
@@ -87,9 +91,8 @@ export function RegisterPage() {
                 autoCorrect="off"
                 autoComplete="username"
                 spellCheck="false"
-                className={`w-full bg-gray-800 border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-magic-light transition-colors ${
-                  errors.username ? 'border-red-500' : 'border-gray-700'
-                }`}
+                style={{ textTransform: 'none', fontFamily: 'sans-serif' }}
+                className={inputClass(errors.username)}
               />
               {errors.username && <p className="text-red-400 text-xs mt-1">{errors.username}</p>}
             </div>
@@ -105,9 +108,8 @@ export function RegisterPage() {
                 autoCapitalize="none"
                 autoCorrect="off"
                 autoComplete="email"
-                className={`w-full bg-gray-800 border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-magic-light transition-colors ${
-                  errors.email ? 'border-red-500' : 'border-gray-700'
-                }`}
+                style={{ textTransform: 'none', fontFamily: 'sans-serif' }}
+                className={inputClass(errors.email)}
               />
               {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
             </div>
@@ -121,9 +123,8 @@ export function RegisterPage() {
                 onChange={handleChange}
                 placeholder="Min 8 characters"
                 autoComplete="new-password"
-                className={`w-full bg-gray-800 border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-magic-light transition-colors ${
-                  errors.password ? 'border-red-500' : 'border-gray-700'
-                }`}
+                style={{ textTransform: 'none', fontFamily: 'sans-serif' }}
+                className={inputClass(errors.password)}
               />
               {errors.password && <p className="text-red-400 text-xs mt-1">{errors.password}</p>}
             </div>
@@ -185,7 +186,6 @@ export function LoginPage() {
     try {
       const res = await authAPI.login(form)
       const { access_token, user } = res.data
-
       login(access_token, user)
       toast.success(`Welcome back, ${user.username}! ✦`)
       navigate('/learn')
@@ -200,6 +200,11 @@ export function LoginPage() {
       setLoading(false)
     }
   }
+
+  const inputClass = (hasError) =>
+    `w-full bg-gray-800 border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-magic-light transition-colors normal-case font-sans tracking-normal ${
+      hasError ? 'border-red-500' : 'border-gray-700'
+    }`
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-20">
@@ -227,9 +232,8 @@ export function LoginPage() {
                 autoCapitalize="none"
                 autoCorrect="off"
                 autoComplete="email"
-                className={`w-full bg-gray-800 border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-magic-light transition-colors ${
-                  errors.email ? 'border-red-500' : 'border-gray-700'
-                }`}
+                style={{ textTransform: 'none', fontFamily: 'sans-serif' }}
+                className={inputClass(errors.email)}
               />
               {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
             </div>
@@ -243,9 +247,8 @@ export function LoginPage() {
                 onChange={handleChange}
                 placeholder="Your password"
                 autoComplete="current-password"
-                className={`w-full bg-gray-800 border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-magic-light transition-colors ${
-                  errors.password ? 'border-red-500' : 'border-gray-700'
-                }`}
+                style={{ textTransform: 'none', fontFamily: 'sans-serif' }}
+                className={inputClass(errors.password)}
               />
               {errors.password && <p className="text-red-400 text-xs mt-1">{errors.password}</p>}
             </div>
