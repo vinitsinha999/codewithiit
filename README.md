@@ -3,8 +3,7 @@
 > *"Learn Python through the ancient art of storytelling"*
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-codewithiit.vercel.app-7c3aed?style=for-the-badge&logo=vercel)](https://codewithiit.vercel.app)
-[![Backend](https://img.shields.io/badge/Backend-Render-46E3B7?style=for-the-badge&logo=render)](https://codewithiit-backend.onrender.com)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+
 
 ---
 
