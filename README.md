@@ -3,7 +3,7 @@
 > *"Learn Python through the ancient art of storytelling"*
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-codewithiit.vercel.app-7c3aed?style=for-the-badge&logo=vercel)](https://codewithiit.vercel.app)
-
+[![Made with](https://img.shields.io/badge/Made%20with-React%20%2B%20FastAPI-blue?style=for-the-badge)](https://github.com/vinitsinha999/codewithiit)
 
 ---
 
@@ -19,14 +19,14 @@ Built by **Vinit Kumar**, Undergraduate Student at **IIT Patna** (Cybersecurity 
 
 | Feature | Description |
 |---|---|
-| 📖 **Storytelling Chapters** | 12 fantasy-themed chapters — each with a narrative story, concept slides, and code examples |
-| 🤖 **AI-Powered Hints** | Ask the CodeWithIIT AI for hints during quizzes — powered by Groq (Llama 3.3) with Gemini fallback |
+| 📖 **Storytelling Chapters** | 12 fantasy-themed chapters with narrative story, concept slides, and code examples |
+| 🤖 **AI-Powered Hints** | Ask CodeWithIIT AI for hints during quizzes — Groq LLaMA 3.3 with Gemini fallback |
 | ⚡ **XP & Ranking System** | Earn XP for correct answers, rank up from Curious Novice to Python Master |
 | 🏆 **Leaderboard** | Compete with other learners globally |
 | 🔥 **Streak System** | Daily learning streaks to build consistency |
 | 📊 **Progress Dashboard** | Track chapter scores, total XP, and quest progress |
 | 🎓 **Completion Certificate** | Royal/Fantasy style downloadable PNG certificate on completing all 12 chapters |
-| 🔊 **8-bit Sound Effects** | Duolingo-style game sounds — correct answer, wrong answer, victory fanfare |
+| 🔊 **8-bit Sound Effects** | Duolingo-style game sounds — correct, wrong, victory fanfare |
 | 🔐 **JWT Authentication** | Secure register/login with JWT tokens |
 | 📱 **Fully Responsive** | Works on mobile, tablet, and desktop |
 
@@ -54,56 +54,54 @@ Built by **Vinit Kumar**, Undergraduate Student at **IIT Patna** (Cybersecurity 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React 18** — Component-based UI
-- **Vite** — Lightning fast build tool
+- **React 18** + **Vite**
 - **Tailwind CSS** — Utility-first styling
 - **Framer Motion** — Smooth animations
-- **Web Audio API** — 8-bit game sounds (no external files)
+- **Web Audio API** — 8-bit game sounds (zero external files)
 - **HTML Canvas** — Certificate generation
 
 ### Backend
-- **FastAPI** — High-performance Python API framework
+- **FastAPI** — High-performance async Python API
 - **SQLAlchemy (Async)** — ORM with async support
 - **PostgreSQL** — Production database (Neon serverless)
 - **JWT** — Secure authentication
-- **Groq API** — LLama 3.3 70B for AI hints
+- **Groq API** — LLaMA 3.3 70B for AI hints
 - **Google Gemini** — Fallback AI model
 
 ### Infrastructure
-- **Vercel** — Frontend hosting (CDN)
+- **Vercel** — Frontend hosting
 - **Render** — Backend hosting
-- **Neon** — Serverless PostgreSQL database
+- **Neon** — Serverless PostgreSQL
 - **UptimeRobot** — Backend health monitoring
-- **GitHub** — Version control & CI/CD
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started (Local Setup)
 
 ### Prerequisites
 - Node.js 18+
 - Python 3.10+
-- PostgreSQL (or Neon account)
+- PostgreSQL or Neon account
 
-### Clone the repository
+### Clone
 ```bash
 git clone https://github.com/vinitsinha999/codewithiit.git
 cd codewithiit
 ```
 
-### Backend Setup
+### Backend
 ```bash
 cd backend
 python -m venv venv
-venv\Scripts\activate       # Windows
-source venv/bin/activate    # Mac/Linux
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # Mac/Linux
 
 pip install -r requirements.txt
 ```
 
-Create `.env` file in `/backend`:
+Create `backend/.env`:
 ```env
-DATABASE_URL=your_neon_connection_string
+DATABASE_URL=your_database_url
 SECRET_KEY=your_secret_key
 GROQ_API_KEY=your_groq_api_key
 GEMINI_API_KEY=your_gemini_api_key
@@ -111,30 +109,23 @@ ENVIRONMENT=development
 FRONTEND_URL=http://localhost:5173
 ```
 
-Run backend:
 ```bash
 uvicorn main:app --reload
 ```
 
-### Frontend Setup
+### Frontend
 ```bash
 cd frontend
 npm install
 ```
 
-Create `.env` file in `/frontend`:
+Create `frontend/.env`:
 ```env
 VITE_API_URL=http://localhost:8000
 ```
 
-Run frontend:
 ```bash
 npm run dev
-```
-
-### Open in browser
-```
-http://localhost:5173
 ```
 
 ---
@@ -144,15 +135,15 @@ http://localhost:5173
 ```
 codewithiit/
 ├── backend/
-│   ├── main.py                  # FastAPI entry point
+│   ├── main.py
 │   ├── requirements.txt
 │   └── app/
-│       ├── core/                # Config, auth, dependencies
-│       ├── db/                  # Database connection
-│       ├── models/              # SQLAlchemy models
-│       └── routes/              # API endpoints
+│       ├── core/          # Config, auth, dependencies
+│       ├── db/            # Database connection
+│       ├── models/        # SQLAlchemy models
+│       └── routes/        # API endpoints
 │           ├── auth.py
-│           ├── ai.py            # AI hints + question generation
+│           ├── ai.py
 │           ├── progress.py
 │           ├── leaderboard.py
 │           ├── streak.py
@@ -160,56 +151,34 @@ codewithiit/
 │
 └── frontend/
     └── src/
-        ├── api/                 # Axios client
-        ├── components/          # Reusable UI components
-        │   └── game/            # Game-specific components
-        ├── context/             # Auth context
-        ├── data/                # Chapter content + questions
-        ├── hooks/               # Custom React hooks
-        └── pages/               # Route pages
+        ├── api/           # Axios client
+        ├── components/    # UI components
+        ├── context/       # Auth context
+        ├── data/          # Chapter content + questions
+        ├── hooks/         # Custom React hooks
+        └── pages/         # Route pages
 ```
-
----
-
-## 🔌 API Endpoints
-
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/api/auth/register` | Register new user |
-| POST | `/api/auth/login` | Login & get JWT token |
-| GET | `/api/auth/me` | Get current user |
-| POST | `/api/ai/hint` | Get AI hint for a question |
-| POST | `/api/progress` | Save chapter progress |
-| GET | `/api/progress/me` | Get my progress |
-| GET | `/api/leaderboard` | Get top players |
-| GET | `/api/streak/me` | Get my streak |
-| POST | `/api/certificates/issue` | Issue completion certificate |
 
 ---
 
 ## 🌐 Live Demo
 
-🔗 **Frontend:** [codewithiit.vercel.app](https://codewithiit.vercel.app)
-
-🔗 **Backend API Docs:** [codewithiit-backend.onrender.com/docs](https://codewithiit-backend.onrender.com/docs)
-
-> ⚠️ Free tier backend may take 30-50 seconds to wake up on first request.
+🔗 [codewithiit.vercel.app](https://codewithiit.vercel.app)
 
 ---
 
 ## 👨‍💻 Author
 
 **Vinit Kumar**
-- 🎓 Undergraduate Student, **IIT Patna** (Cybersecurity & AI)
-- 🌐 [LinkedIn](https://linkedin.com/in/vinit-kumar-iitp)
+- 🎓 Undergraduate Student — **IIT Patna** (Cybersecurity & AI)
+- 💼 [LinkedIn](https://linkedin.com/in/vinit-kumar-iitp)
 - 🐙 [GitHub](https://github.com/vinitsinha999)
-- 📧 vinitkumargaya.vk@gmail.com
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+MIT License — feel free to use and modify.
 
 ---
 
