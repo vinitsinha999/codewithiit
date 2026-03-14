@@ -1,7 +1,7 @@
 # ⚔ Code with IIT
 
 > **An interactive, story-driven Python learning platform.**
-> Built by a B.Sc. (Cybersecurity & AI) student at IIT Patna.
+> Built by a  undergrad student at IIT Patna.
 
 [![Made at IIT Patna](https://img.shields.io/badge/Made%20at-IIT%20Patna-blue?style=flat-square)](https://www.iitp.ac.in)
 [![Stack](https://img.shields.io/badge/Stack-React%20%2B%20FastAPI%20%2B%20PostgreSQL-purple?style=flat-square)](#)
