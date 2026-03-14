@@ -92,8 +92,8 @@ That's it. No backend needed for Phase 1 — progress saves to localStorage.
 
 ## 👨‍💻 Author
 
-**[Your Name]**
-B.Sc. Cybersecurity & AI — IIT Patna
+**[Vinit kumar]**
+ — IIT Patna
 Specialisation: Cybersecurity, AI, CSE, Generative AI
 
 ---
