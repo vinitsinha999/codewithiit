@@ -993,3 +993,7 @@ Reply in plain text only, no markdown."""
             )
 
     return {"hint": hint.strip()}
+
+def call_groq(prompt: str):
+    print(f"[groq] API key starts with: {settings.GROQ_API_KEY[:10]}")
+    client = Groq(api_key=settings.GROQ_API_KEY)
