@@ -49,12 +49,12 @@ That's it. No backend needed for Phase 1 — progress saves to localStorage.
 | Phase | Status | What |
 |-------|--------|------|
 | 1 | ✅ Done | React frontend, routing, game logic, local progress |
-| 2 | 🔜 Next | FastAPI backend, PostgreSQL, JWT auth |
-| 3 | ⏳ | Connect frontend ↔ backend, save progress to DB |
-| 4 | ⏳ | In-browser Python execution (Pyodide) |
-| 5 | ⏳ | Cybersecurity hardening (OWASP Top 10) |
-| 6 | ⏳ | CodeWithIIT AI hints integration |
-| 7 | ⏳ | Deploy, CI/CD, custom domain |
+| 2 | ✅ Done | FastAPI backend, PostgreSQL, JWT auth |
+| 3 | ✅ Done | Connect frontend ↔ backend, save progress to DB |
+| 4 | ✅ Done | In-browser Python execution (Pyodide) |
+| 5 | ✅ Done | Cybersecurity hardening (OWASP Top 10) |
+| 6 | ✅ Done | CodeWithIIT AI hints integration |
+| 7 | ✅ Done | Deploy, CI/CD, custom domain |
 
 ---
 
